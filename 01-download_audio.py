@@ -33,7 +33,7 @@ END = None
 # VPN proxy. If you get "SSL: WRONG_VERSION_NUMBER", put your VPN app's
 # local HTTP proxy here, e.g. "http://127.0.0.1:10809" (v2rayN) or
 # "http://127.0.0.1:2081" (Nekoray). Note: it must start with http:// not https://
-PROXY = None
+PROXY = "http://127.0.0.1:10809"
 # ------------------------------------------
 
 
