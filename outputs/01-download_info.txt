@@ -1,0 +1,164 @@
+01-download_audio
+Run at   : 2026-10-02 10:56
+URL      : https://www.youtube.com/watch?v=3K3rDlrreHU
+Range    : start -> end
+Status   : ERROR
+
+Traceback (most recent call last):
+  File "C:\Users\sama\anaconda3\Lib\urllib\request.py", line 1319, in do_open
+    h.request(req.get_method(), req.selector, req.data, headers,
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+              encode_chunked=req.has_header('Transfer-encoding'))
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sama\anaconda3\Lib\http\client.py", line 1338, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sama\anaconda3\Lib\http\client.py", line 1384, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sama\anaconda3\Lib\http\client.py", line 1333, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sama\anaconda3\Lib\http\client.py", line 1093, in _send_output
+    self.send(msg)
+    ~~~~~~~~~^^^^^
+  File "C:\Users\sama\anaconda3\Lib\http\client.py", line 1037, in send
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "C:\Users\sama\anaconda3\Lib\http\client.py", line 1479, in connect
+    self.sock = self._context.wrap_socket(self.sock,
+                ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+                                          server_hostname=server_hostname)
+                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sama\anaconda3\Lib\ssl.py", line 455, in wrap_socket
+    return self.sslsocket_class._create(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sock=sock,
+        ^^^^^^^^^^
+    ...<5 lines>...
+        session=session
+        ^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\sama\anaconda3\Lib\ssl.py", line 1076, in _create
+    self.do_handshake()
+    ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\sama\anaconda3\Lib\ssl.py", line 1372, in do_handshake
+    self._sslobj.do_handshake()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+ssl.SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1028)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\sama\PycharmProjects\taarof-pilot\.venv\Lib\site-packages\yt_dlp\extractor\common.py", line 907, in _request_webpage
+    return self._downloader.urlopen(self._create_request(url_or_request, data, headers, query, extensions))
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sama\PycharmProjects\taarof-pilot\.venv\Lib\site-packages\yt_dlp\YoutubeDL.py", line 4304, in urlopen
+    return self._request_director.send(req)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\sama\PycharmProjects\taarof-pilot\.venv\Lib\site-packages\yt_dlp\networking\common.py", line 117, in send
+    response = handler.send(request)
+  File "C:\Users\sama\PycharmProjects\taarof-pilot\.venv\Lib\site-packages\yt_dlp\networking\_helper.py", line 194, in wrapper
+    return func(self, *args, **kwargs)
+  File "C:\Users\sama\PycharmProjects\taarof-pilot\.venv\Lib\site-packages\yt_dlp\networking\common.py", line 359, in send
+    return self._send(request)
+           ~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\sama\PycharmProjects\taarof-pilot\.venv\Lib\site-packages\yt_dlp\networking\_urllib.py", line 433, in _send
+    handle_response_read_exceptions(cause)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\sama\PycharmProjects\taarof-pilot\.venv\Lib\site-packages\yt_dlp\networking\_urllib.py", line 347, in handle_response_read_exceptions
+    handle_sslerror(e)
+    ~~~~~~~~~~~~~~~^^^
+  File "C:\Users\sama\PycharmProjects\taarof-pilot\.venv\Lib\site-packages\yt_dlp\networking\_urllib.py", line 340, in handle_sslerror
+    raise SSLError(cause=e) from e
+yt_dlp.networking.exceptions.SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1028)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sama\PycharmProjects\taarof-pilot\.venv\Lib\site-packages\yt_dlp\YoutubeDL.py", line 1731, in wrapper
+    return func(self, *args, **kwargs)
+  File "C:\Users\sama\PycharmProjects\taarof-pilot\.venv\Lib\site-packages\yt_dlp\YoutubeDL.py", line 1866, in __extract_info
+    ie_result = ie.extract(url)
+  File "C:\Users\sama\PycharmProjects\taarof-pilot\.venv\Lib\site-packages\yt_dlp\extractor\common.py", line 765, in extract
+    ie_result = self._real_extract(url)
+  File "C:\Users\sama\PycharmProjects\taarof-pilot\.venv\Lib\site-packages\yt_dlp\extractor\youtube\_video.py", line 3935, in _real_extract
+    webpage, webpage_ytcfg, initial_data, is_premium_subscriber, player_responses, player_url = self._initial_extract(
+                                                                                                ~~~~~~~~~~~~~~~~~~~~~^
+        url, smuggled_data, webpage_url, self._webpage_client, video_id)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sama\PycharmProjects\taarof-pilot\.venv\Lib\site-packages\yt_dlp\extractor\youtube\_video.py", line 3916, in _initial_extract
+    initial_data = self._download_initial_data(video_id, webpage, webpage_client, webpage_ytcfg)
+  File "C:\Users\sama\PycharmProjects\taarof-pilot\.venv\Lib\site-packages\yt_dlp\extractor\youtube\_video.py", line 3894, in _download_initial_data
+    initial_data = self._extract_response(
+        item_id=video_id, ep='next', fatal=False,
+        ytcfg=webpage_ytcfg, query=query, check_get_keys='contents',
+        note='Downloading initial data API JSON', default_client=webpage_client)
+  File "C:\Users\sama\PycharmProjects\taarof-pilot\.venv\Lib\site-packages\yt_dlp\extractor\youtube\_base.py", line 1306, in _extract_response
+    next(main_retries)
+    ~~~~^^^^^^^^^^^^^^
+  File "C:\Users\sama\PycharmProjects\taarof-pilot\.venv\Lib\site-packages\yt_dlp\utils\_utils.py", line 5289, in __iter__
+    self.error_callback(self.error, self.attempt, self.retries)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sama\PycharmProjects\taarof-pilot\.venv\Lib\site-packages\yt_dlp\extractor\common.py", line 4066, in _error_or_warning
+    RetryManager.report_retry(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        err, _count or int(fatal), _retries,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        info=self.to_screen, warn=self.report_warning, error=None if fatal else self.report_warning,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        sleep_func=self.get_param('retry_sleep_functions', {}).get('extractor'))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sama\PycharmProjects\taarof-pilot\.venv\Lib\site-packages\yt_dlp\utils\_utils.py", line 5297, in report_retry
+    raise e
+  File "C:\Users\sama\PycharmProjects\taarof-pilot\.venv\Lib\site-packages\yt_dlp\extractor\youtube\_base.py", line 1296, in _extract_response
+    response = self._call_api(
+        ep=ep, fatal=True, headers=headers,
+        video_id=item_id, query=query, note=note,
+        context=self._extract_context(ytcfg, default_client),
+        api_hostname=api_hostname, default_client=default_client)
+  File "C:\Users\sama\PycharmProjects\taarof-pilot\.venv\Lib\site-packages\yt_dlp\extractor\youtube\_base.py", line 841, in _call_api
+    return self._download_json(
+           ~~~~~~~~~~~~~~~~~~~^
+        f'https://{self._select_api_hostname(api_hostname, default_client)}/youtubei/v1/{ep}',
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+            'prettyPrint': 'false',
+            ^^^^^^^^^^^^^^^^^^^^^^^
+        }, cndn=lambda _, v: v))
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sama\PycharmProjects\taarof-pilot\.venv\Lib\site-packages\yt_dlp\extractor\common.py", line 1148, in download_content
+    res = getattr(self, download_handle.__name__)(url_or_request, video_id, **kwargs)
+  File "C:\Users\sama\PycharmProjects\taarof-pilot\.venv\Lib\site-packages\yt_dlp\extractor\common.py", line 1106, in download_handle
+    res = self._download_webpage_handle(
+        url_or_request, video_id, note=note, errnote=errnote, fatal=fatal, encoding=encoding,
+        data=data, headers=headers, query=query, expected_status=expected_status,
+        impersonate=impersonate, require_impersonation=require_impersonation)
+  File "C:\Users\sama\PycharmProjects\taarof-pilot\.venv\Lib\site-packages\yt_dlp\extractor\common.py", line 971, in _download_webpage_handle
+    urlh = self._request_webpage(url_or_request, video_id, note, errnote, fatal, data=data,
+                                 headers=headers, query=query, expected_status=expected_status,
+                                 impersonate=impersonate, require_impersonation=require_impersonation)
+  File "C:\Users\sama\PycharmProjects\taarof-pilot\.venv\Lib\site-packages\yt_dlp\extractor\youtube\_base.py", line 819, in _request_webpage
+    response = super()._request_webpage(*args, **kwargs)
+  File "C:\Users\sama\PycharmProjects\taarof-pilot\.venv\Lib\site-packages\yt_dlp\extractor\common.py", line 920, in _request_webpage
+    raise ExtractorError(errmsg, cause=err, video_id=video_id)
+yt_dlp.utils.ExtractorError: [youtube] 3K3rDlrreHU: Unable to download API page: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1028) (caused by SSLError('[SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1028)')); please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appropriate issue template. Confirm you are on the latest version using  yt-dlp -U
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sama\PycharmProjects\taarof-pilot\01-download_audio.py", line 69, in <module>
+    info = ydl.extract_info(URL, download=True)
+  File "C:\Users\sama\PycharmProjects\taarof-pilot\.venv\Lib\site-packages\yt_dlp\YoutubeDL.py", line 1720, in extract_info
+    return self.__extract_info(url, self.get_info_extractor(key), download, extra_info, process)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sama\PycharmProjects\taarof-pilot\.venv\Lib\site-packages\yt_dlp\YoutubeDL.py", line 1749, in wrapper
+    self.report_error(str(e), e.format_traceback())
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sama\PycharmProjects\taarof-pilot\.venv\Lib\site-packages\yt_dlp\YoutubeDL.py", line 1165, in report_error
+    self.trouble(f'{self._format_err("ERROR:", self.Styles.ERROR)} {message}', *args, **kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sama\PycharmProjects\taarof-pilot\.venv\Lib\site-packages\yt_dlp\YoutubeDL.py", line 1103, in trouble
+    raise DownloadError(message, exc_info)
+yt_dlp.utils.DownloadError: ERROR: [youtube] 3K3rDlrreHU: Unable to download API page: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1028) (caused by SSLError('[SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1028)')); please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appropriate issue template. Confirm you are on the latest version using  yt-dlp -U
