@@ -1,0 +1,17 @@
+# Media files are never committed (size + copyright)
+data/
+*.wav
+*.mp3
+*.m4a
+*.webm
+*.mp4
+*.mkv
+*.part
+
+# Python / IDE
+__pycache__/
+*.pyc
+.venv/
+venv/
+.idea/
+.DS_Store
