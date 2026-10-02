@@ -29,6 +29,11 @@ OUT_NAME = "episode01"
 # Only from minute 28 to the end:  START = "00:28:00", END = None
 START = None
 END = None
+
+# VPN proxy. If you get "SSL: WRONG_VERSION_NUMBER", put your VPN app's
+# local HTTP proxy here, e.g. "http://127.0.0.1:10809" (v2rayN) or
+# "http://127.0.0.1:2081" (Nekoray). Note: it must start with http:// not https://
+PROXY = None
 # ------------------------------------------
 
 
@@ -51,6 +56,9 @@ ydl_opts = {
     }],
 }
 
+if PROXY:
+    ydl_opts["proxy"] = PROXY
+
 if START or END:
     start_s = to_seconds(START) if START else 0
     end_s = to_seconds(END) if END else float("inf")
@@ -62,6 +70,8 @@ lines = [
     f"Run at   : {datetime.now():%Y-%m-%d %H:%M}",
     f"URL      : {URL}",
     f"Range    : {START or 'start'} -> {END or 'end'}",
+    f"Proxy    : {PROXY or 'none'}",
+    f"yt-dlp   : {yt_dlp.version.__version__}",
 ]
 
 try:
